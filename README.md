@@ -1,147 +1,110 @@
-# Sneaker Reselling Project – StockX Data Analysis
+# Sneaker Reselling Market Analysis
+
+### A Data Science Project
 
 ## Overview
 
-This project explores the sneaker reselling market using historical sales data from **StockX**, a leading online sneaker marketplace. The objective is to analyze factors influencing sneaker resale prices and profitability, and to derive insights that can guide data-driven reselling and investment strategies.
+The sneaker reselling market has evolved into a high-value secondary marketplace driven by demand forecasting, limited supply, and price speculation. This project applies **data science techniques** to analyze sneaker resale data and uncover patterns in pricing, demand, and market behavior.
 
-The analysis combines descriptive statistics, visualizations, and regression modeling to understand pricing behavior across brands, sneaker types, colors, sizes, and time-to-sale.
+The objective is to demonstrate an end-to-end **data science workflow**, including data preprocessing, exploratory data analysis (EDA), feature engineering, and insights generation to support data-driven decision-making in resale markets.
+
+---
+
+## Problem Statement
+
+Sneaker resale prices fluctuate due to multiple factors such as brand, release timing, hype, and market demand.
+This project aims to answer key analytical questions:
+
+* What factors influence sneaker resale prices the most?
+* How does demand vary across brands and categories?
+* Are there observable trends that can guide profitable reselling decisions?
 
 ---
 
 ## Dataset
 
-The analysis uses the `sneakers.csv` dataset, which contains transaction-level resale data with the following key attributes:
+The dataset contains structured sneaker resale information with attributes such as:
 
-* **Order Date** – Date of sale
-* **Brand** – Sneaker brand (e.g., Nike, Adidas)
-* **Sneaker Type** – Specific sneaker model
-* **Color** – Colorway of the sneaker
-* **Sale Price** – Final resale price
-* **Retail Price** – Original retail price
-* **Release Date** – Official release date
-* **Shoe Size** – Size of the sneaker sold
-* **Buyer Region** – Geographic region of the buyer
-* **Days to Sale** – Days between release and resale
-* **Count** – Number of similar listings or transactions
+* Sneaker brand and model
+* Retail price vs resale price
+* Release dates
+* Market demand indicators
+* Transaction-related metadata
+
+> The dataset is analyzed strictly for educational and analytical purposes.
 
 ---
 
-## Key Questions Addressed
+## Methodology
 
-### 1. Profit Analysis
+### 1. Data Cleaning & Preprocessing
 
-* Calculation of **maximum**, **minimum**, and **average profit**
-* Identification of sneaker brands with:
+* Handling missing and inconsistent values
+* Data type corrections
+* Feature normalization and transformation
 
-  * Highest individual sale profit
-  * Lowest individual sale profit
+### 2. Exploratory Data Analysis (EDA)
 
-### 2. Mean Profit by Sneaker Type
+* Price distribution analysis
+* Brand-wise and category-wise comparisons
+* Trend analysis using visualizations
 
-* Determination of sneaker types with:
+### 3. Feature Engineering
 
-  * Highest mean profit
-  * Lowest mean profit
+* Creation of resale premium metrics
+* Time-based features (release vs resale timing)
+* Demand-related indicators
 
-### 3. Investment Strategy
+### 4. Insights & Interpretation
 
-* Comparison between:
-
-  * Investing based on **highest individual sale profit**
-  * Investing based on **highest average (mean) profit**
-* Discussion of risk vs. consistency trade-offs
-
-### 4. Color Impact on Sale Price
-
-* Analysis of colors with the highest mean **Sale Price** for selected sneaker types, including:
-
-  * *Adidas Yeezy Boost 350 Low*
-  * *Adidas Yeezy Boost 350 V2*
-
-### 5. Shoe Size Impact on Sale Price
-
-* Identification of shoe sizes yielding the highest mean **Sale Price** for specific sneaker types (e.g., *Adidas Yeezy Boost 350 Low*)
-
-### 6. Sale Price vs. Days to Sale Trends
-
-* Visualization of how **Sale Price** changes with **Days to Sale**
-* Trend comparison across multiple sneaker types
-
-### 7. Linear Regression R² Analysis
-
-* Evaluation of **R² values** from linear regression models predicting **Sale Price** using:
-
-  * Shoe Size
-  * Days to Sale
-  * Retail Price
-  * Count
-* Comparison of model performance across sneaker types
-
-### 8. Variable Impact on R²
-
-* Identification of:
-
-  * Variables with zero or negligible coefficients
-  * Variables with the strongest influence on R² values
-
-### 9. Specific Sneaker Trend Analysis
-
-* Detailed trend analysis of **Sale Price vs. Days to Sale** for:
-
-  * *Air Jordan 1 Retro High*
-
-### 10. Impact of Multiple Variables on R²
-
-* Comparison of regression performance using:
-
-  * Single-variable models
-  * Multi-variable models (e.g., Days to Sale + Count)
-
-### 11. Overall R² Evaluation
-
-* Determination of which sneaker type achieves the **highest overall R²** when all variables are included
-
-### 12. Intercept and Slope Interpretation
-
-* Interpretation of regression parameters (intercept and slope), with a focused case study on:
-
-  * *Nike Air Force 1 Low Virgil Abloh*
-
-### 13. Profit vs. Sale Price Relationship
-
-* Visualization and modeling of the relationship between **Sale Price** and **Profit**
-* Use of:
-
-  * Linear regression
-  * Polynomial regression
-
-### 14. Overfitting Analysis
-
-* Identification of overfitting risks when increasing polynomial degree
-* Comparison of model generalization across different complexities
+* Identification of high-performing brands
+* Factors contributing to higher resale margins
+* Market volatility observations
 
 ---
 
-## How to Run the Project
+## Tools & Technologies
 
-1. Open the provided **Google Colab notebook**.
-2. Upload the `sneakers.csv` dataset.
-3. Run all cells sequentially to reproduce the analysis, visualizations, and results.
+* **Programming Language:** Python
+* **Libraries:**
 
----
-
-## Tools & Techniques Used
-
-* Python (Pandas, NumPy)
-* Data Visualization (Matplotlib, Seaborn)
-* Linear & Polynomial Regression
-* Exploratory Data Analysis (EDA)
-* Model Evaluation using R²
+  * Pandas
+  * NumPy
+  * Matplotlib
+  * Seaborn
+* **Environment:** Jupyter Notebook
 
 ---
 
-## Conclusion
+## Key Insights
 
-This project provides a data-driven perspective on sneaker reselling, highlighting how factors such as brand, sneaker type, color, size, and time-to-sale affect resale prices and profitability. The findings can support more informed investment decisions in the sneaker resale market.
+* Certain brands consistently generate higher resale premiums
+* Limited-edition releases significantly impact price spikes
+* Market demand shows seasonal and event-driven behavior
 
 ---
+
+## Project Structure
+
+```
+├── Sneaker__reselling.ipynb
+├── data/
+│   └── sneaker_resale_dataset.csv
+├── README.md
+```
+
+---
+
+## Learning Outcomes
+
+* Practical application of data science techniques on real-world market data
+* Improved understanding of EDA for business-oriented datasets
+* Experience in deriving actionable insights from noisy market data
+
+---
+
+## Future Work
+
+* Predictive modeling for resale price estimation
+* Time-series forecasting for demand trends
+* Integration of external data (social media hype, release calendars)
